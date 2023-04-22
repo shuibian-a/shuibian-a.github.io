@@ -399,7 +399,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     const lazyloadFn = (i, arr, limit) => {
-      const loadItem = Number(limit);
+      const loadItem = limit;
       const arrLength = arr.length;
       if (arrLength > loadItem) i.insertAdjacentHTML("beforeend", htmlStr(arr.splice(0, loadItem)));
       else {
@@ -418,7 +418,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const runJustifiedGallery = (item, arr) => {
       const limit = item.getAttribute("data-limit") ?? arr.length;
-      if (!item.classList.contains("lazyload") || arr.length < limit) {
+      if (!item.classList.contains("lazyload")) {
         // 不懒加载
         item.innerHTML = htmlStr(arr);
       } else {
@@ -433,7 +433,7 @@ document.addEventListener("DOMContentLoaded", function () {
               item.querySelectorAll(`.fj-gallery-item:nth-last-child(-n+${lastItemLength})`)
             );
             anzhiyu.loadLightbox(item.querySelectorAll("img"));
-            lastItemLength < Number(limit) && (window.runJustifiedGalleryNextElementSiblingLazyloadFn = null);
+            lastItemLength < limit && (window.runJustifiedGalleryNextElementSiblingLazyloadFn = null);
           };
 
           window.runJustifiedGalleryNextElementSiblingLazyloadFn = clickBtnFn;
