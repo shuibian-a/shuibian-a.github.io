@@ -1,1 +1,1 @@
-var posts=["2023/04/22/hello-world/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
+var posts=["2023/04/15/华为HarmonyOS（鸿蒙系统）/"];function toRandomPost(){pjax.loadUrl('/'+posts[Math.floor(Math.random() * posts.length)]);};
